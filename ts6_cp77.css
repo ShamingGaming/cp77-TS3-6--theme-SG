@@ -1,0 +1,88 @@
+/* --- 1. BASIS & HINTERGRUND --- */
+/* QSS unterstützt keine direkten URLs für Bilder gut, lade das Bild am besten herunter 
+   und lege es in den style-Ordner. Hier als Beispiel der Platzhalter. */
+QMainWindow {
+    background-color: #000000; /* Tiefschwarze Basis */
+    background-image: url('styles/cyberpunk_bg.jpg'); 
+    background-attachment: fixed;
+    background-position: center;
+}
+
+/* Transparenz für alle Basis-Fenster, damit das Bild durchscheint */
+QWidget {
+    background: transparent;
+    color: #ffffff;
+}
+
+/* --- 2. SEITENLEISTEN (Serverbaum & Channel-Liste) --- */
+/* Entspricht Ebene 2 in deinem CSS */
+QTreeView#ServerTreeView {
+    background-color: rgba(0, 0, 0, 153); /* ca. 0.6 Transparenz */
+    border: 1px solid #ff00ff; /* Neon Pink */
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px;
+    selection-background-color: rgba(157, 0, 255, 128); /* Neon Purple für Auswahl */
+}
+
+/* --- 3. CHAT BEREICH (Die Ruhezone) --- */
+/* Entspricht Ebene 5 in deinem CSS - etwas dunkler für Lesbarkeit */
+QTextEdit#ChatTab {
+    background-color: rgba(0, 0, 0, 191); /* 75% Dunkelheit im Chat (0.75 * 255) */
+    border: 1px solid #00ffff; /* Neon Cyan als Akzent */
+    border-radius: 5px;
+    margin: 5px;
+}
+
+/* Eingabefeld unten im Chat */
+QLineEdit#ChatLineEdit {
+    background-color: #000000;
+    border: 1px solid #ff00ff;
+    border-radius: 3px;
+    color: #ffffff;
+    padding: 3px;
+}
+
+/* --- 4. DAS USER-POPOUT (Info-Frame rechts) --- */
+/* TS3 hat kein echtes "Popout", aber der Info-Frame rechts übernimmt diese Rolle */
+QTextBrowser#InfoFrame {
+    background-color: rgba(10, 5, 15, 242); /* Fast massiv dunkel, wie dein popout-bg */
+    border: 3px solid #ff00ff; /* Starker Pink-Rahmen als Ersatz für den Glow */
+    border-radius: 5px;
+    margin: 5px;
+    padding: 10px;
+}
+
+/* --- 5. SCROLLBARS (Neon Cyan) --- */
+QScrollBar:vertical {
+    background: transparent;
+    width: 10px;
+    margin: 0px 0px 0px 0px;
+}
+
+QScrollBar::handle:vertical {
+    background: #00ffff; /* Neon Cyan */
+    border-radius: 4px;
+    min-height: 20px;
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    height: 0px; /* Pfeile oben/unten ausblenden für einen cleanen Look */
+}
+
+QScrollBar:horizontal {
+    background: transparent;
+    height: 10px;
+}
+
+QScrollBar::handle:horizontal {
+    background: #00ffff; /* Neon Cyan */
+    border-radius: 4px;
+    min-width: 20px;
+}
+
+/* --- 6. MENÜLEISTEN (Cleanup) --- */
+QMenuBar, QToolBar {
+    background-color: #000000;
+    border-bottom: 2px solid #9d00ff; /* Neon Purple */
+}
